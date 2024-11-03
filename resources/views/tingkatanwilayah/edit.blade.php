@@ -1,0 +1,28 @@
+@extends('master.masterdashboard')
+@section('title', 'Tingkatan Wilayah Edit')
+@section('main-title')
+    <h3>Edit Tingkatan Wilayah</h3>
+@endsection
+@section('content')
+    <div class="card w-100">
+        <div class="card-body">
+            <form action="{{ route('tingkatanwilayah.update',$tingkatanwilayah->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{$tingkatanwilayah->nama}}">
+                    @error('nama')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-3">
+                    <button class="form-control btn-warning">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+@endsection
