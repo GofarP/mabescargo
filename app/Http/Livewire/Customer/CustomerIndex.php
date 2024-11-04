@@ -27,6 +27,7 @@ class CustomerIndex extends Component
         ->orWhere('alamat_detail','like','%'.$this->search.'%')
         ->orWhere('agama','like','%'.$this->search.'%')
         ->orWhere('tempat_lahir','like','%'.$this->search.'%')
+        ->orderByDesc('tanggal')
         ->paginate(10)
         ->onEachSide(1);
 

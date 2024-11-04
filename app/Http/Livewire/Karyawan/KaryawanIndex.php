@@ -16,6 +16,7 @@ class KaryawanIndex extends Component
     public function render()
     {
         $data_karyawan=Karyawan::where('nama','like','%'.$this->search.'%')
+        ->orderByDesc('created_at')
         ->paginate(10)
         ->onEachSide(1);
 

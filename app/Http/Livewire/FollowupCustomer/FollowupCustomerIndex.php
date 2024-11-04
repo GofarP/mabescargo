@@ -43,6 +43,7 @@ class FollowupCustomerIndex extends Component
         ->orWhere('kendala', 'LIKE', '%'. $this->search. '%')
         ->orWhere('tanggapan', 'LIKE', '%'. $this->search. '%')
         ->orWhere('status', 'LIKE', '%'. $this->search. '%')
+        ->orderByDesc('tanggal')
         ->paginate(1)
         ->onEachSide(1);
 

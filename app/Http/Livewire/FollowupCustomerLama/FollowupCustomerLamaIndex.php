@@ -43,6 +43,7 @@ class FollowupCustomerLamaIndex extends Component
         ->orWhere('respon','like','%'.$this->search.'%')
         ->orWhere('kendala','like','%'.$this->search.'%')
         ->orWhere('jumlah_kirim','like','%'.$this->search.'%')
+        ->orderByDesc('tanggal')
         ->paginate(10)
         ->onEachSide(1);
 

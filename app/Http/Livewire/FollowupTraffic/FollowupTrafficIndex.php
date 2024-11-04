@@ -36,6 +36,7 @@ class FollowupTrafficIndex extends Component
         ->orWhere('harga_barang','like','%'.$this->search.'%')
         ->orWhere('budget','like','%'.$this->search.'%')
         ->orWhere('harga_kendaraan','like','%'.$this->search.'%')
+        ->orderByDesc('tanggal')
         ->paginate(10)
         ->onEachSide(1);
 

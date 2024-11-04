@@ -135,10 +135,26 @@
                         <div>Data Tipe Customer</div>
                     </a>
                 </li>
-
-
             </ul>
         </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Pesanan MBS</span>
+        </li>
+        <li class="menu-item {{ Str::contains(Request::path(), 'pesananmbs') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class='menu-icon tf-icons bx bx-git-branch'></i>
+                <div>Pesanan Mbs Cargo</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ Request::is('pesananmbs*') ? 'active' : '' }}">
+                    <a href="{{ route('cabang.index') }}" class="menu-link">
+                        <div>Data Pesanan</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Kontak</span>
@@ -232,6 +248,23 @@
                 <li class="menu-item {{Request::is('metodepembayaran*') ? 'active' :''}}">
                     <a href="{{ route('metodepembayaran.index') }}" class="menu-link">
                         <div data-i18n="metodepembayaran">Metode Pembayaran</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Jalur</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'jalur') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="jalur">Jalur</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('jalur*') ? 'active' :''}}">
+                    <a href="{{ route('jalur.index') }}" class="menu-link">
+                        <div data-i18n="Jalur">Jalur</div>
                     </a>
                 </li>
             </ul>

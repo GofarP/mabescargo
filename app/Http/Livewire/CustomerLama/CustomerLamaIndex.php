@@ -25,6 +25,7 @@ class CustomerLamaIndex extends Component
             ->orWhere('alamat_detail', 'LIKE', '%' . $this->search . '%')
             ->orWhere('agama', 'LIKE', '%' . $this->search . '%')
             ->orWhere('tempat_lahir', 'LIKE', '%' . $this->search . '%')
+            ->orderByDesc('created_at')
             ->paginate(10)
             ->onEachSide(1);
 

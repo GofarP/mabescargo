@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| beprotected $fillable = ['nama'];ed to the "web" middleware group. Make something great!
 |
 */
 
@@ -35,6 +35,8 @@ Route::resource('followupcustomer', App\Http\Controllers\FollowupCustomerControl
 Route::resource('followupcustomerlama', App\Http\Controllers\FollowupCustomerLamaController::class)->names('followupcustomerlama');
 Route::resource('followuptraffic', App\Http\Controllers\FollowupTrafficController::class)->names('followuptraffic');
 Route::resource('statuspembayaran', App\Http\Controllers\StatusPembayaranController::class)->names('statuspembayaran');
+Route::resource('metodepembayaran', App\Http\Controllers\MetodePembayaranController::class)->names('metodepembayaran');
+Route::resource('jalur', App\Http\Controllers\JalurController::class)->names('jalur');
 
 Route::post('customer/print',[App\Http\Controllers\CustomerController::class, 'print'])->name('customer_print');
 Route::post('followupcustomer/print',[App\Http\Controllers\FollowupCustomerController::class, 'print'])->name('followup_customer_print');

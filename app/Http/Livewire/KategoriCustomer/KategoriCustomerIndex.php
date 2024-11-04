@@ -15,6 +15,7 @@ class KategoriCustomerIndex extends Component
     public function render()
     {
         $data_kategori_customer=KategoriCustomer::where('nama','LIKE','%'.$this->search.'%')
+        ->orderByDesc('created_at')
         ->paginate(10)
         ->OnEachSide(1);
 

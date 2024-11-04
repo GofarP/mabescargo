@@ -11,13 +11,14 @@ class TipeCustomerIndex extends Component
 
     public $search;
 
-    protected $paginationTheme='bootstrap';
+    protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
-        $data_tipe_customer=TipeCustomer::where('nama','LIKE','%'.$this->search.'%')
-        ->paginate(10)
-        ->onEachSide(1);
-        return view('livewire.tipe-customer.tipe-customer-index',compact('data_tipe_customer'));
+        $data_tipe_customer = TipeCustomer::where('nama', 'LIKE', '%' . $this->search . '%')
+            ->orderByDesc('created_at')
+            ->paginate(10)
+            ->onEachSide(1);
+        return view('livewire.tipe-customer.tipe-customer-index', compact('data_tipe_customer'));
     }
 }

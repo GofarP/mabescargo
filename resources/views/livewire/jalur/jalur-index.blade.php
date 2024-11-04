@@ -2,7 +2,7 @@
     <!-- Search and Button Section -->
     <div class="d-flex flex-column align-items-end mt-3">
         <input type="text" class="form-control w-25 w-md-25 mb-2" placeholder="Search..." wire:model.debounce.300ms="search">
-        <a href="{{ route('metodepembayaran.create') }}" class="btn btn-primary w-auto">Tambah Metode Pembayaran</a>
+        <a href="{{ route('jalur.create') }}" class="btn btn-primary w-auto">Tambah Jalur</a>
     </div>
 
     <!-- Table Section -->
@@ -16,14 +16,14 @@
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-                @foreach ($data_metode_pembayaran as $item)
+                @foreach ($data_jalur as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama }}</td>
                         <td>
                             <div class="d-flex">
-                                <a href="{{route('metodepembayaran.edit',$item->id)}}" class="btn btn-warning me-2">Edit</a> <!-- Add margin-end (me-2) -->
-                                <form action="{{ route('metodepembayaran.destroy', $item->id) }}" method="POST">
+                                <a href="{{route('jalur.edit',$item->id)}}" class="btn btn-warning me-2">Edit</a> <!-- Add margin-end (me-2) -->
+                                <form action="{{ route('jalur.destroy', $item->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')">Hapus</button>
@@ -37,7 +37,7 @@
         </table>
 
         <div class="float-end">
-            {{ $data_metode_pembayaran->links() }}
+            {{ $data_jalur->links() }}
         </div>
 
 
