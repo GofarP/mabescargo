@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('followup_traffic', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal');
+            $table->bigInteger('followup_customer_id');
+            $table->string('no_telp');
+            $table->longText('respon');
+            $table->longText('kendala');
+            $table->string('barang');
+            $table->bigInteger('wilayah_asal_id');
+            $table->bigInteger('wilayah_tujuan_id');
+            $table->bigInteger('harga_barang');
+            $table->bigInteger('budget');
+            $table->bigInteger('harga_kendaraan');
+            $table->bigInteger('karyawan_id');
             $table->timestamps();
         });
     }

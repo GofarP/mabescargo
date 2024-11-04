@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kontak;
+use App\Models\Wilayah;
+use App\Models\Karyawan;
+use App\Models\FollowupTraffic;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FollowupCustomer extends Model
 {
@@ -27,4 +31,8 @@ class FollowupCustomer extends Model
         return $this->belongsTo(Karyawan::class,'karyawan_id','id');
     }
 
+
+    public function followuptraffic(){
+        return $this->hasMany(FollowupTraffic::class,'followup_customer_id','id');
+    }
 }

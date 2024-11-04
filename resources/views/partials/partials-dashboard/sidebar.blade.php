@@ -195,6 +195,45 @@
                         <div data-i18n="followupcustomerlama">Followup Customer Lama</div>
                     </a>
                 </li>
+                <li class="menu-item {{Request::is('followuptraffic*') ? 'active' :''}}">
+                    <a href="{{ route('followuptraffic.index') }}" class="menu-link">
+                        <div data-i18n="followuptraffic">Followup Traffic</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Status Pembayaran</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'statuspembayaran') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="followup">Status Pembayaran</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('statuspembayaran*') ? 'active' :''}}">
+                    <a href="{{ route('statuspembayaran.index') }}" class="menu-link">
+                        <div data-i18n="statuspembayaran">Status Pembayaran</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Metode Pembayaran</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'metodepembayaran') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="followup">Metode Pembayaran</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('metodepembayaran*') ? 'active' :''}}">
+                    <a href="{{ route('metodepembayaran.index') }}" class="menu-link">
+                        <div data-i18n="metodepembayaran">Metode Pembayaran</div>
+                    </a>
+                </li>
             </ul>
         </li>
 

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card ">
 
     <form action="{{ route('followup_customer_lama_print') }}" method="POST" target="_blank">
         @csrf

@@ -33,7 +33,10 @@ Route::resource('kontak', App\Http\Controllers\KontakController::class)->names('
 Route::resource('karyawan', App\Http\Controllers\KaryawanController::class)->names('karyawan');
 Route::resource('followupcustomer', App\Http\Controllers\FollowupCustomerController::class)->names('followupcustomer');
 Route::resource('followupcustomerlama', App\Http\Controllers\FollowupCustomerLamaController::class)->names('followupcustomerlama');
+Route::resource('followuptraffic', App\Http\Controllers\FollowupTrafficController::class)->names('followuptraffic');
+Route::resource('statuspembayaran', App\Http\Controllers\StatusPembayaranController::class)->names('statuspembayaran');
 
 Route::post('customer/print',[App\Http\Controllers\CustomerController::class, 'print'])->name('customer_print');
 Route::post('followupcustomer/print',[App\Http\Controllers\FollowupCustomerController::class, 'print'])->name('followup_customer_print');
 Route::post('followupcustomerlama/print',[App\Http\Controllers\FollowupCustomerLamaController::class, 'print'])->name('followup_customer_lama_print');
+Route::post('followuptraffic/print',[App\Http\Controllers\FollowupTrafficController::class, 'print'])->name('followup_traffic_print');
