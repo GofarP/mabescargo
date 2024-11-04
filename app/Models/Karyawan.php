@@ -10,4 +10,14 @@ class Karyawan extends Model
     use HasFactory;
 
     protected $fillable=['nama'];
+
+    public function followupcustomer(){
+        return $this->hasMany(FollowupCustomer::class,'karyawan_id','id');
+    }
+
+    public function followupcustomerlama(){
+        return $this->hasMany(FollowupCustomerLama::class,'karyawan_id','id');
+    }
+
+    
 }

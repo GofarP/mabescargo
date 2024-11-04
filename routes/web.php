@@ -32,5 +32,8 @@ Route::resource('tipecustomer', App\Http\Controllers\TipeCustomerController::cla
 Route::resource('kontak', App\Http\Controllers\KontakController::class)->names('kontak');
 Route::resource('karyawan', App\Http\Controllers\KaryawanController::class)->names('karyawan');
 Route::resource('followupcustomer', App\Http\Controllers\FollowupCustomerController::class)->names('followupcustomer');
+Route::resource('followupcustomerlama', App\Http\Controllers\FollowupCustomerLamaController::class)->names('followupcustomerlama');
 
 Route::post('customer/print',[App\Http\Controllers\CustomerController::class, 'print'])->name('customer_print');
+Route::post('followupcustomer/print',[App\Http\Controllers\FollowupCustomerController::class, 'print'])->name('followup_customer_print');
+Route::post('followupcustomerlama/print',[App\Http\Controllers\FollowupCustomerLamaController::class, 'print'])->name('followup_customer_lama_print');

@@ -190,6 +190,11 @@
                         <div data-i18n="followupcustomer">Followup Customer</div>
                     </a>
                 </li>
+                <li class="menu-item {{Request::is('followupcustomerlama*') ? 'active' :''}}">
+                    <a href="{{ route('followupcustomerlama.index') }}" class="menu-link">
+                        <div data-i18n="followupcustomerlama">Followup Customer Lama</div>
+                    </a>
+                </li>
             </ul>
         </li>
 

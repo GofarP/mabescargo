@@ -22,7 +22,7 @@ return new class extends Migration
             $table->bigInteger('budget');
             $table->bigInteger('wilayah_asal_id');
             $table->bigInteger('wilayah_tujuan_id');
-            $table->bigInteger('kontak');
+            $table->bigInteger('kontak_id');
             $table->enum('status',['selesai','belum selesai']);
             $table->bigInteger('karyawan_id');
             $table->longText('keterangan_harga');

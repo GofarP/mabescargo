@@ -1,7 +1,7 @@
 @extends('master.masterdashboard')
-@section('title', 'Kategori Customer Index')
+@section('title', 'Followup customer Lama Index')
 @section('main-title')
-    <h3>Tipe Customer Index</h3>
+    <h3>Followup Customer Lama Index</h3>
 @endsection
 @section('content')
 
@@ -15,6 +15,6 @@
         </div>
     @endif
 
-    @livewire('tipe-customer.tipe-customer-index')
+    @livewire('followup-customer-lama.followup-customer-lama-index')
 
 @endsection

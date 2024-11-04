@@ -24,4 +24,8 @@ class CustomerLama extends Model
     public function wilayah(){
         return $this->belongsTo(Wilayah::class,'wilayah_id','id');
     }
+
+    public function followupcustomerlama(){
+        return $this->hasMany(FollowupCustomerLama::class,'customer_lama_id','id');
+    }
 }

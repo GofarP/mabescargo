@@ -10,4 +10,8 @@ class Kontak extends Model
     use HasFactory;
 
     protected $fillable=['nama'];
+
+    public function followupcustomer(){
+        return $this->hasMany(FollowupCustomer::class,'kontak_id','id');
+    }
 }

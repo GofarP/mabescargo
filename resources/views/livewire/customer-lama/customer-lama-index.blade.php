@@ -55,6 +55,7 @@
         </table>
 
         <div class="float-end">
+            {{$data_customer_lama->links()}}
         </div>
     </div>
 </div>

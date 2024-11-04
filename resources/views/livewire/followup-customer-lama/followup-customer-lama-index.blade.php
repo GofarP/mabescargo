@@ -1,6 +1,6 @@
 <div class="card">
 
-    <form action="{{ route('followup_customer_print') }}" method="POST" target="_blank">
+    <form action="{{ route('followup_customer_lama_print') }}" method="POST" target="_blank">
         @csrf
         <div class="row">
             <div class="col">
@@ -13,20 +13,30 @@
             </div>
 
             <div class="col" wire:ignore>
-                <label for="jenis_kontak_id">Jenis Kontak</label>
-                <select name="jenis_kontak_id" id="jenis_kontak_id" class="form-control js-example-basic-single">
+                <label for="karyawan_id">Karyawan</label>
+                <select name="karyawan_id" id="karyawan_id" class="form-control js-example-basic-single">
                     <option value="semua">Semua</option>
-                    @foreach ($data_jenis_kontak as $item)
+                    @foreach ($data_karyawan as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="col" wire:ignore>
-                <label for="karyawan_id">Karyawan</label>
-                <select name="karyawan_id" id="karyawan_id" class="form-control js-example-basic-single">
+                <label for="tipe_customer_id">Tipe Customer</label>
+                <select name="tipe_customer_id" id="tipe_customer_id" class="form-control js-example-basic-single">
                     <option value="semua">Semua</option>
-                    @foreach ($data_karyawan as $item)
+                    @foreach ($data_tipe_customer as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col" wire:ignore>
+                <label for="kategori_customer_id">Kategori Customer</label>
+                <select name="kategori_customer_id" id="kategori_customer_id" class="form-control js-example-basic-single">
+                    <option value="semua">Semua</option>
+                    @foreach ($data_kategori_customer as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endforeach
                 </select>
@@ -44,7 +54,7 @@
     <div class="d-flex flex-column align-items-end mt-5">
         <input type="text" class="form-control w-25 w-md-25 mb-2" wire:model.debounce.300ms="search"
             placeholder="Search...">
-        <a href="{{ route('followupcustomer.create') }}" class="btn btn-primary w-auto">Tambah Followup Customer</a>
+        <a href="{{ route('followupcustomerlama.create') }}" class="btn btn-primary w-auto">Tambah Followup Customer Lama</a>
     </div>
 
     <!-- Table Section -->
@@ -56,49 +66,38 @@
                 <tr>
                     <th>No</th>
                     <th>Tanggal</th>
-                    <th>Nama</th>
-                    <th>Karyawan</th>
+                    <th>Kustomer</th>
                     <th>No Telp</th>
-                    <th>Harga Barang</th>
-                    <th>Harga Kendaraan</th>
-                    <th>Berat Minimal</th>
-                    <th>Keterangan Harga</th>
-                    <th>Budget</th>
-                    <th>Daerah Asal</th>
-                    <th>Daerah Tujuan</th>
-                    <th>Kontak</th>
-                    <th>Barang</th>
+                    <th>Respon</th>
                     <th>Kendala</th>
-                    <th>Tanggapan</th>
-                    <th>Status</th>
+                    <th>Marketing</th>
+                    <th>Kategori Pelanggan</th>
+                    <th>Tipe Pelanggan</th>
+                    <th>Terakhir Kirim</th>
+                    <th>Jumlah Kirim</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-                @foreach ($data_followup_customer as $item)
+                @foreach ($data_followup_customer_lama as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y') }}</td>
-                        <td>{{ $item->nama ?? '-' }}</td>
-                        <td>{{ $item->karyawan->nama ?? '-' }}</td>
-                        <td>{{ $item->no_telp ?? '-' }}</td>
-                        <td>{{ number_format($item->harga_barang) ?? '-' }}</td>
-                        <td>{{ number_format($item->harga_kendaraan) ?? '-' }}</td>
-                        <td>{{ $item->berat_minimal ?? '-' }}</td>
-                        <td>{!! $item->keterangan_harga ?? '-' !!}</td>
-                        <td>{{ number_format($item->budget) ?? '-' }}</td>
-                        <td>{{ $item->wilayahasal->nama ?? '-' }}</td>
-                        <td>{{ $item->wilayahtujuan->nama ?? '-' }}</td>
-                        <td>{{ $item->kontak->nama }}</td>
-                        <td>{!! $item->barang ?? '-' !!}</td>
-                        <td>{!! $item->kendala ?? '-' !!}</td>
-                        <td>{!! $item->tanggapan ?? '-' !!}</td>
-                        <td>{{ $item->status ?? '-' }}</td>
+                        <td>{{ $item->customerlama->nama ?? '-' }}</td>
+                        <td>{{$item->customerlama->no_telp}}</td>
+                        <td>{!! $item->respon !!}</td>
+                        <td>{!! $item->kendala !!}</td>
+                        <td>{!! $item->karyawan->nama !!}</td>
+                        <td>{{ $item->kategoricustomer->nama }}</td>
+                        <td>{{ $item->tipecustomer->nama }}</td>
+                        <td>{{ \Carbon\Carbon::parse($item->terakhirkirim)->format('d-m-Y') }}</td>
+                        <td>{{$item->jumlah_kirim}}</td>
+
                         <td>
-                            <form action="{{ route('followupcustomer.destroy', $item->id) }}" method="POST">
+                            <form action="{{ route('followupcustomerlama.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="{{ route('followupcustomer.edit', $item->id) }}"
+                                <a href="{{ route('followupcustomerlama.edit', $item->id) }}"
                                     class="btn btn-warning">Edit</a>
                                 <button class="btn btn-danger">Delete</button>
                             </form>
@@ -110,7 +109,7 @@
         </table>
 
         <div class="float-end">
-            {{ $data_followup_customer->links() }}
+            {{ $data_followup_customer_lama->links() }}
         </div>
     </div>
 </div>

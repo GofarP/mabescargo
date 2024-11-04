@@ -9,4 +9,8 @@ class KategoriCustomer extends Model
 {
     use HasFactory;
     public $fillable=['nama'];
+
+    public function followupcustomerlama(){
+        return $this->hasMany(FollowupCustomerLama::class,'kategori_customer_id','id');
+    }
 }
