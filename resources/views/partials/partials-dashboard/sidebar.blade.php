@@ -148,7 +148,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ Request::is('pesananmbs*') ? 'active' : '' }}">
-                    <a href="{{ route('cabang.index') }}" class="menu-link">
+                    <a href="{{ route('pesananmbs.index') }}" class="menu-link">
                         <div>Data Pesanan</div>
                     </a>
                 </li>
@@ -214,6 +214,23 @@
                 <li class="menu-item {{Request::is('followuptraffic*') ? 'active' :''}}">
                     <a href="{{ route('followuptraffic.index') }}" class="menu-link">
                         <div data-i18n="followuptraffic">Followup Traffic</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Sales After Service</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'salesafterservice') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="followup">Sales After Service</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('salesafterservice*') ? 'active' :''}}">
+                    <a href="{{ route('salesafterservice.index') }}" class="menu-link">
+                        <div data-i18n="salesafterservice">Sales After Service</div>
                     </a>
                 </li>
             </ul>

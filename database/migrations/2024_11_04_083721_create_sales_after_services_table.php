@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->date('tanggal');
             $table->date('tanggal_masuk');
-            $table->date('tanggal_selesai');
+            $table->date('tanggal_done');
+            $table->bigInteger('pesanan_mbs_cargo_id');
+            $table->longText('keterangan');
+            $table->longText('kendala');
+            $table->longText('kritik_saran');
+            $table->integer('tingkat_kepuasan');
             $table->timestamps();
         });
     }

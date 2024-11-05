@@ -26,4 +26,8 @@ class Customer extends Model
     public function wilayah(){
         return $this->belongsTo(Wilayah::class,'wilayah_id','id');
     }
+
+    public function pesananmbs(){
+        return $this->hasMany(PesananMbs::class,'customer_id','id');
+    }
 }

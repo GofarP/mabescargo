@@ -1,7 +1,7 @@
 @extends('master.masterdashboard')
-@section('title', 'Pesanan Index')
+@section('title', 'Sebar Brosur Index')
 @section('main-title')
-    <h3>Pesanan Index</h3>
+    <h3>Sebar Brosur Index</h3>
 @endsection
 @section('content')
 
@@ -15,6 +15,6 @@
         </div>
     @endif
 
-    @livewire('pesanan-mbs.pesanan-mbs-index')
+    @livewire('sebar-brosur.sebar-brosur-index')
 
 @endsection

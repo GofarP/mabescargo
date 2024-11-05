@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::singularResourceParameters(false);
+
 Route::get('/',[App\Http\Controllers\LandingPageController::class,'index'])->name('index');
 Route::get('/about',[App\Http\Controllers\LandingPageController::class,'about'])->name('about');
 Route::get('/service',[App\Http\Controllers\LandingPageController::class,'service'])->name('service');
@@ -37,8 +39,16 @@ Route::resource('followuptraffic', App\Http\Controllers\FollowupTrafficControlle
 Route::resource('statuspembayaran', App\Http\Controllers\StatusPembayaranController::class)->names('statuspembayaran');
 Route::resource('metodepembayaran', App\Http\Controllers\MetodePembayaranController::class)->names('metodepembayaran');
 Route::resource('jalur', App\Http\Controllers\JalurController::class)->names('jalur');
+Route::resource('pesananmbs', App\Http\Controllers\PesananMbsController::class)->names('pesananmbs');
+Route::resource('sebarbrosur', App\Http\Controllers\SebarBrosurController::class)->names('sebarbrosur');
+Route::resource('salesafterservice', App\Http\Controllers\SalesAfterServiceController::class)->names('salesafterservice');
+
+
 
 Route::post('customer/print',[App\Http\Controllers\CustomerController::class, 'print'])->name('customer_print');
 Route::post('followupcustomer/print',[App\Http\Controllers\FollowupCustomerController::class, 'print'])->name('followup_customer_print');
 Route::post('followupcustomerlama/print',[App\Http\Controllers\FollowupCustomerLamaController::class, 'print'])->name('followup_customer_lama_print');
 Route::post('followuptraffic/print',[App\Http\Controllers\FollowupTrafficController::class, 'print'])->name('followup_traffic_print');
+Route::post('pesananmbs/print',[App\Http\Controllers\PesananMbsController::class, 'print'])->name('pesanan_mbs_print');
+Route::post('sebarbrosur/print',[App\Http\Controllers\SebarBrosurController::class, 'print'])->name('sebar_brosur_print');
+

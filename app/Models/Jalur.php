@@ -10,4 +10,8 @@ class Jalur extends Model
     use HasFactory;
 
     protected $fillable = ['nama'];
+
+    public function pesananmbs(){
+        return $this->hasMany(PesananMbs::class,'jalur_id','id');
+    }
 }

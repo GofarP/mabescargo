@@ -19,5 +19,12 @@ class Karyawan extends Model
         return $this->hasMany(FollowupCustomerLama::class,'karyawan_id','id');
     }
 
-    
+    public function pesananmbs(){
+        return $this->hasMany(PesananMbs::class,'karyawan_id','id');
+    }
+
+    public function sebarbrosur(){
+        return $this->belongsTo(SebarBrosur::class,'karyawan_id','id');
+    }
+
 }

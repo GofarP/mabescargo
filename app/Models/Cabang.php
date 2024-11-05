@@ -10,4 +10,8 @@ class Cabang extends Model
     use HasFactory;
 
     protected $fillable = ['nama'];
+
+    public function pesananmbs(){
+        return $this->hasMany(PesananMbs::class,'cabang_id','id');
+    }
 }
