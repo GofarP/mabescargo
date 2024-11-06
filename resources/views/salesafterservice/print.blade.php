@@ -17,6 +17,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="{{asset('dashboard-assets/vendor/fonts/boxicons.css')}}" />
+
 </head>
 
 <body>
@@ -55,49 +57,33 @@
                         <td>{{ $item->kritik_saran }}</td>
                         <td>
                             @if ($item->tingkat_kepuasan == 1)
-                                <i class="fas fa-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
                             @elseif ($item->tingkat_kepuasan == 2)
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
                             @elseif ($item->tingkat_kepuasan == 3)
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
                             @elseif ($item->tingkat_kepuasan == 4)
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
                             @elseif ($item->tingkat_kepuasan == 5)
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
-                                <i class="fas fa-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
+                                <i class="bx bxs-star" style="color: red"></i>
                             @endif
 
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <a href="{{ route('kontak.edit', $item->id) }}" class="btn btn-warning me-2">Edit</a>
-                                <!-- Add margin-end (me-2) -->
-                                <form action="{{ route('kontak.destroy', $item->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger"
-                                        onclick="return confirm('Apakah anda yakin akan menghapus data ini?')">Hapus</button>
-                                </form>
-                            </div>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
 
         </table>
-
-        <div class="float-end">
-            {{ $data_kontak->links() }}
-        </div>
 
 
     </div>

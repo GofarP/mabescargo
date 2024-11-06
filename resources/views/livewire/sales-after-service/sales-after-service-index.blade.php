@@ -1,4 +1,25 @@
 <div class="card">
+
+    <form action="{{ route('sales_after_service_print') }}" method="POST" target="_blank">
+        @csrf
+        <div class="row">
+            <div class="col-md-5">
+                <label for="mulai_dari">Mulai Dari</label>
+                <input type="date" class="form-control" name="mulai_dari">
+            </div>
+            <div class="col-md-5">
+                <label for="sampai_dengan">Sampai Dengan</label>
+                <input type="date" class="form-control" name="sampai_dengan">
+            </div>
+            <div class="col-12 col-md-2">
+                <label for="">&nbsp;</label>
+                <button type="submit" class="btn btn-primary form-control">
+                    <i class='bx bxs-printer'></i> Print
+                </button>
+            </div>
+        </div>
+    </form>
+
     <div class="d-flex flex-column align-items-end mt-3">
         <input type="text" class="form-control w-25 w-md-25 mb-2" placeholder="Search..."
             wire:model.debounce.300ms="search">
@@ -19,6 +40,7 @@
                     <th>Kendala</th>
                     <th>Kritik & Saran</th>
                     <th>TIngkat Kepuasan</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
@@ -58,7 +80,8 @@
                         </td>
                         <td>
                             <div class="d-flex">
-                                <a href="{{ route('salesafterservice.edit', $item->id) }}" class="btn btn-warning me-2">Edit</a>
+                                <a href="{{ route('salesafterservice.edit', $item->id) }}"
+                                    class="btn btn-warning me-2">Edit</a>
                                 <!-- Add margin-end (me-2) -->
                                 <form action="{{ route('salesafterservice.destroy', $item->id) }}" method="POST">
                                     @csrf

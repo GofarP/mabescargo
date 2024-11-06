@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('mtc', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama');
+            $table->bigInteger('status_manifes');
+            $table->bigInteger('pesanan_mbs_cargo_id');
+            $table->string('nama_penerima');
+            $table->string('kota_tujuan');
+            $table->bigInteger('vendor_id');
+            $table->longText('asal_tujuan');
+            $table->date('tanggal_jalan');
+            $table->integer('estimasi_awal');
+            $table->integer('estimasi_akhir');
+            $table->longText('keterangan');
+            $table->string('penerima');
+            $table->string('foto')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('mtc');
+    }
+};

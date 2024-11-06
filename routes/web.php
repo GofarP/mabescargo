@@ -42,6 +42,10 @@ Route::resource('jalur', App\Http\Controllers\JalurController::class)->names('ja
 Route::resource('pesananmbs', App\Http\Controllers\PesananMbsController::class)->names('pesananmbs');
 Route::resource('sebarbrosur', App\Http\Controllers\SebarBrosurController::class)->names('sebarbrosur');
 Route::resource('salesafterservice', App\Http\Controllers\SalesAfterServiceController::class)->names('salesafterservice');
+Route::resource('daftarharga', App\Http\Controllers\DaftarHargaController::class)->names('daftarharga');
+Route::resource('statusmanifes', App\Http\Controllers\StatusManifesController::class)->names('statusmanifes');
+Route::resource('mtc', App\Http\Controllers\MTCController::class)->names('mtc');
+Route::resource('datavendor', App\Http\Controllers\VendorController::class)->names('datavendor');
 
 
 
@@ -51,4 +55,5 @@ Route::post('followupcustomerlama/print',[App\Http\Controllers\FollowupCustomerL
 Route::post('followuptraffic/print',[App\Http\Controllers\FollowupTrafficController::class, 'print'])->name('followup_traffic_print');
 Route::post('pesananmbs/print',[App\Http\Controllers\PesananMbsController::class, 'print'])->name('pesanan_mbs_print');
 Route::post('sebarbrosur/print',[App\Http\Controllers\SebarBrosurController::class, 'print'])->name('sebar_brosur_print');
+Route::post('salesafterservice/print',[App\Http\Controllers\SalesAfterServiceController::class, 'print'])->name('sales_after_service_print');
 

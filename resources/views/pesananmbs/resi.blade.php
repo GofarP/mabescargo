@@ -87,7 +87,7 @@
                     <br>
                     <span>BCA: 8890729500 a/n Harrys Oberlin</span>
                     <br>
-                    <span>BRI: 0174-0100-3237-306 a/n CV Manna Ekspedisi Nauli</span>
+                    <span>BRI: 17401003219308 a/n Bintan bersaudara</span>
                     <br>
                     <br>
                     <span><b>Komplain 1x24 Jam dengan disertai video unboxing dan foto</b></span>

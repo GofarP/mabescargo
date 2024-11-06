@@ -66,6 +66,8 @@ class SalesAfterServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
+
     public function destroy(SalesAfterService $salesafterservice)
     {
         $salesafterservice->delete();
@@ -81,7 +83,7 @@ class SalesAfterServiceController extends Controller
         ->whereBetween('tanggal',[$mulai_dari,$sampai_dengan])
         ->get();
 
-        return view('salesafterservice.create',compact('mulai_dari','sampai_dengan'));
+        return view('salesafterservice.print',compact('mulai_dari','sampai_dengan','data_sales_after_service'));
 
     }
 }

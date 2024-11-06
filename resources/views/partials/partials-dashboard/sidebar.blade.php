@@ -270,6 +270,24 @@
             </ul>
         </li>
 
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Daftar Harga</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'daftarharga') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="daftarharga">Daftar Harga</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('daftarharga*') ? 'active' :''}}">
+                    <a href="{{ route('daftarharga.index') }}" class="menu-link">
+                        <div data-i18n="daftarharga">Daftar Harga</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Jalur</span>
         </li>
@@ -286,6 +304,45 @@
                 </li>
             </ul>
         </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Vendor</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'datavendor') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="datavendor">Vendor</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('datavendor*') ? 'active' :''}}">
+                    <a href="{{ route('datavendor.index') }}" class="menu-link">
+                        <div data-i18n="datavendor">Vendor</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">MTC</span>
+        </li>
+        <li class="menu-item  {{ Str::contains(Request::path(), 'mtc') ? 'active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="mtc">MTC</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{Request::is('mtc*') ? 'active' :''}}">
+                    <a href="{{ route('mtc.index') }}" class="menu-link">
+                        <div data-i18n="mtc">Mtc</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+
 
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>

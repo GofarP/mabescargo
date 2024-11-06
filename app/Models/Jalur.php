@@ -14,4 +14,8 @@ class Jalur extends Model
     public function pesananmbs(){
         return $this->hasMany(PesananMbs::class,'jalur_id','id');
     }
+
+    public function daftarharga(){
+        return $this->belongsTo(Jalur::class,'jalur_id','id');
+    }
 }

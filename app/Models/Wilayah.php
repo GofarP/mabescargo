@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Vendor;
+use App\Models\Customer;
+use App\Models\CustomerLama;
+use App\Models\TingkatanWilayah;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Wilayah extends Model
 {
@@ -21,5 +25,10 @@ class Wilayah extends Model
 
     public function customerlama(){
         return $this->hasMany(CustomerLama:: class,'wilayah_id','id');
+    }
+
+
+    public function vendor(){
+        return $this->hasMany(Vendor::class,'wilayah_id','id');
     }
 }
